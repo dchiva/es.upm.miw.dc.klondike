@@ -1,5 +1,7 @@
 package klondike.models;
 
+import java.util.Map;
+
 public class Game {
 
 	private Board board;
@@ -66,5 +68,9 @@ public class Game {
 
 	public boolean suitToStairMove(String suit, int stair) {
 		return this.board.suitToStairMove(suit, stair);
+	}
+	
+	public Map<String,String> getSuits(){
+		return this.board.getSuits();
 	}
 }

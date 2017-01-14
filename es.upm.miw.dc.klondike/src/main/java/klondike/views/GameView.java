@@ -1,5 +1,7 @@
 package klondike.views;
 
+import java.util.Map;
+
 import klondike.controllers.DeckToDiscardsMoveController;
 import klondike.controllers.DiscardToDeckMoveController;
 import klondike.controllers.DiscardToStairMoveController;
@@ -29,7 +31,10 @@ public class GameView {
 	}
 
 	public void interact(DiscardToSuitMoveController discardToSuitMoveController) {
-		discardToSuitMoveController.move();
+		if(!discardToSuitMoveController.move()){
+			IO io=new IO();
+			io.write("\nNo se pueden mover la carta de descartes a ninguna escalera\n");
+		}
 	}
 
 	public void interact(StairToStairMoveController stairToStairMoveController) {
@@ -68,14 +73,17 @@ public class GameView {
 
 	public void interact(SuitToStairMoveController suitToStairMoveController) {
 		LimitedStringDialog limitedStrindDialog=new LimitedStringDialog("¿De que palo?");
-		limitedStrindDialog.addWord("o", "Oros");
-		limitedStrindDialog.addWord("c", "Copas");
-		limitedStrindDialog.addWord("e", "Espadas");
-		limitedStrindDialog.addWord("b", "Bastos");
+		Map<String,String> suits=suitToStairMoveController.getSuits();
+		for(String suitKey:suits.keySet()){
+			limitedStrindDialog.addWord(suitKey, suits.get(suitKey));
+		}
 		String suit=limitedStrindDialog.read();
 		int stair = new LimitedIntDialog("¿A que escalera?", 1, 7).read();
 		
-		suitToStairMoveController.move(suit,stair-1);
+		if(suitToStairMoveController.move(suit,stair-1)){
+			IO io=new IO();
+			io.write("\nNo se puede mover del palo "+suit+" a la escalera "+stair+" \n\n");
+		}
 	}
 
 }

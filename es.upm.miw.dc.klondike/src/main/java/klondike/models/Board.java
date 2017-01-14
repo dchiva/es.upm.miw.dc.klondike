@@ -79,15 +79,15 @@ public class Board {
 	}
 
 	public void deckToDiscardsMove(int numberOfDiscards) {
-		numberOfDiscards=Math.min(numberOfDiscards, this.discards.size());
+		int realNumberOfDiscards=Math.min(numberOfDiscards, this.deck.size());
 		this.discardToDeckMove();
-		KlondikeCard cardToDiscard;
-		for(int i=0;i<numberOfDiscards;i++){
+		/*KlondikeCard cardToDiscard;
+		for(int i=0;i<realNumberOfDiscards;i++){
 			cardToDiscard=deck.removeNextCard();
 			cardToDiscard.setHidden(false);
 			discards.add(cardToDiscard);
-		}
-		//discards.add(deck.removeNextsCards(numberOfDiscards));
+		}*/
+		discards.add(deck.removeNextsCards(realNumberOfDiscards));
 	}
 	
 	public String toString(){
@@ -139,8 +139,8 @@ public class Board {
 				this.discards.removeNextCard();
 				return true;
 			}
-			System.out.println("\n Imposible añadir la carta "+this.discards.getNextCard().getId()+" a la escalera "
-					+ stair + " "+ this.cardsStairs.get(stair).getNextCard().getId());
+			/*System.out.println("\n Imposible añadir la carta "+this.discards.getNextCard().getId()+" a la escalera "
+					+ stair + " "+ this.cardsStairs.get(stair).getNextCard().getId());*/
 		}
 		return false;
 	}
@@ -161,7 +161,6 @@ public class Board {
 		cardsNumber=Math.min(cardsNumber,this.cardsStairs.get(originStairIndex).size());
 		CardsGroup originSubStair=this.cardsStairs.get(originStairIndex).getNextsCards(cardsNumber);
 		CardsGroup destinationStair=this.cardsStairs.get(destinationStairIndex);
-		System.out.println(originSubStair.getNextCard().getId());
 		if(!originSubStair.getLastCard().isHidden() && destinationStair.add(originSubStair)){
 			this.cardsStairs.get(originStairIndex).removeNextsCards(cardsNumber);
 			return true;
@@ -194,5 +193,9 @@ public class Board {
 			return true;
 		}
 		return false;
+	}
+	
+	public Map<String,String> getSuits(){
+		return this.deckFactory.getSuits();
 	}
 }

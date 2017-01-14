@@ -43,4 +43,8 @@ public abstract class DeckFactory {
 	public String getSuitLongName(String briefName){
 		return this.suits.get(briefName);
 	}
+	
+	public Map<String,String> getSuits(){
+		return this.suits;
+	}
 }
