@@ -16,7 +16,7 @@ public class SpanishDeck extends DeckFactory{
 		this.buildSuitIntervalCards("b",1,12);
 	}
 	
-	public static DeckFactory getSpanishDeck(){
+	public static DeckFactory getDeck(){
 		return spanishDeck;
 	}
 	

@@ -26,10 +26,10 @@ public class LocalStartController extends LocalController implements StartContro
 	public void start(int deckType) {
 		switch(deckType){
 			case SPANISH_DECK:
-				this.build(SpanishDeck.getSpanishDeck());
+				this.build(SpanishDeck.getDeck());
 				break;
 			case FRENCH_DECK:
-				this.build(FrenchDeck.getFrenchDeck());
+				this.build(FrenchDeck.getDeck());
 				break;
 		}
 		
