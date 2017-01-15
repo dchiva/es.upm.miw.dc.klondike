@@ -7,7 +7,7 @@ public class Game {
 	private Board board;
 	private State state;
 	private Options selectedOption;
-	private static final int NUMBER_OF_DISCARDS=2;
+	private static final int NUMBER_OF_DISCARDS=3;
 	public Game(){
 		this.state=State.INITIAL;
 		this.board=new Board();

@@ -8,7 +8,7 @@ import klondike.models.Game;
 import klondike.models.SpanishDeck;
 import klondike.models.State;
 
-public class LocalStartController extends LocalOperationController implements StartController {
+public class LocalStartController extends LocalController implements StartController {
 
 	private final static int SPANISH_DECK=0;
 	private final static int FRENCH_DECK=1;

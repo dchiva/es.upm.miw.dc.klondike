@@ -1,6 +1,6 @@
 package klondike.controllers;
 
-public interface DiscardToStairMoveController {
+public interface DiscardToStairMoveController extends OperationController{
 
 	boolean move(int stair);
 

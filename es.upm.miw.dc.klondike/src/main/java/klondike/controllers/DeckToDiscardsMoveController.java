@@ -1,6 +1,6 @@
 package klondike.controllers;
 
-public interface DeckToDiscardsMoveController {
+public interface DeckToDiscardsMoveController extends OperationController{
 	
 	void move();
 

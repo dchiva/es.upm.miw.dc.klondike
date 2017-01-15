@@ -4,7 +4,7 @@ import klondike.controllers.AskOptionController;
 import klondike.controllers.OperationControllerVisitor;
 import klondike.models.Game;
 
-public class LocalAskOptionController extends LocalOptionsController implements AskOptionController{
+public class LocalAskOptionController extends LocalController implements AskOptionController{
 
 	protected LocalAskOptionController(Game game) {
 		super(game);

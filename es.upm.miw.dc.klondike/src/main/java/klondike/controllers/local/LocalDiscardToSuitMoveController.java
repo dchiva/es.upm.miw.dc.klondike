@@ -4,7 +4,7 @@ import klondike.controllers.DiscardToSuitMoveController;
 import klondike.controllers.OperationControllerVisitor;
 import klondike.models.Game;
 
-public class LocalDiscardToSuitMoveController extends LocalOptionsController 
+public class LocalDiscardToSuitMoveController extends LocalController 
 											implements DiscardToSuitMoveController {
 
 	protected LocalDiscardToSuitMoveController(Game game) {

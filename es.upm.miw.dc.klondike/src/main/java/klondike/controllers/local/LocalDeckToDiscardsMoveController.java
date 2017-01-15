@@ -4,7 +4,7 @@ import klondike.controllers.DeckToDiscardsMoveController;
 import klondike.controllers.OperationControllerVisitor;
 import klondike.models.Game;
 
-public class LocalDeckToDiscardsMoveController extends LocalOptionsController implements DeckToDiscardsMoveController {
+public class LocalDeckToDiscardsMoveController extends LocalController implements DeckToDiscardsMoveController {
 
 	protected LocalDeckToDiscardsMoveController(Game game) {
 		super(game);

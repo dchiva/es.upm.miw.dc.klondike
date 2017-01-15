@@ -1,6 +1,6 @@
 package klondike.controllers;
 
-public interface DiscardToSuitMoveController {
+public interface DiscardToSuitMoveController extends OperationController{
 
 	boolean move();
 

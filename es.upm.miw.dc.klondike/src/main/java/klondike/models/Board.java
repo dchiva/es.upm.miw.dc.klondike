@@ -81,12 +81,6 @@ public class Board {
 	public void deckToDiscardsMove(int numberOfDiscards) {
 		int realNumberOfDiscards=Math.min(numberOfDiscards, this.deck.size());
 		this.discardToDeckMove();
-		/*KlondikeCard cardToDiscard;
-		for(int i=0;i<realNumberOfDiscards;i++){
-			cardToDiscard=deck.removeNextCard();
-			cardToDiscard.setHidden(false);
-			discards.add(cardToDiscard);
-		}*/
 		discards.add(deck.removeNextsCards(realNumberOfDiscards));
 	}
 	
@@ -136,11 +130,10 @@ public class Board {
 	public boolean discardToStairMove(int stair) {
 		if(this.discards.size()>0){
 			if(this.cardsStairs.get(stair).add(this.discards.getNextCard())){
+				this.flipStairCard(stair);
 				this.discards.removeNextCard();
 				return true;
 			}
-			/*System.out.println("\n Imposible añadir la carta "+this.discards.getNextCard().getId()+" a la escalera "
-					+ stair + " "+ this.cardsStairs.get(stair).getNextCard().getId());*/
 		}
 		return false;
 	}
@@ -150,6 +143,7 @@ public class Board {
 			KlondikeCard discardCard=this.discards.getNextCard();
 			assert !this.cardsSuits.containsKey(discardCard.getSuit());
 			if(this.cardsSuits.get(discardCard.getSuit()).add(discardCard)){
+				this.cardsSuits.get(discardCard.getSuit()).getNextCard().setHidden(false);
 				this.discards.removeNextCard();
 				return true;
 			}
@@ -179,7 +173,7 @@ public class Board {
 
 	public boolean flipStairCard(int stair) {
 		KlondikeCard stairNextCard=this.cardsStairs.get(stair).getNextCard();
-		if(stairNextCard.isHidden()){
+		if(stairNextCard!=null&&stairNextCard.isHidden()){
 			stairNextCard.setHidden(false);
 			return true;
 		}

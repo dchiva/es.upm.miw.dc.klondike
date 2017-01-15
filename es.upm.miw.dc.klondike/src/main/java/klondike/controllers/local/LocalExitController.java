@@ -5,7 +5,7 @@ import klondike.controllers.OperationControllerVisitor;
 import klondike.models.Game;
 import klondike.models.State;
 
-public class LocalExitController extends LocalOptionsController implements ExitController{
+public class LocalExitController extends LocalController implements ExitController{
 
 	protected LocalExitController(Game game) {
 		super(game);

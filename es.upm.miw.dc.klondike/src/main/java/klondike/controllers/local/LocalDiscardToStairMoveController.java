@@ -4,7 +4,7 @@ import klondike.controllers.DiscardToStairMoveController;
 import klondike.controllers.OperationControllerVisitor;
 import klondike.models.Game;
 
-public class LocalDiscardToStairMoveController extends LocalOptionsController 
+public class LocalDiscardToStairMoveController extends LocalController 
 												implements DiscardToStairMoveController{
 
 	protected LocalDiscardToStairMoveController(Game game) {

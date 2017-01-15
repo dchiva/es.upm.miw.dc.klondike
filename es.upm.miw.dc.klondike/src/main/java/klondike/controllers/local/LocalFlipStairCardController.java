@@ -4,7 +4,7 @@ import klondike.controllers.FlipStairCardController;
 import klondike.controllers.OperationControllerVisitor;
 import klondike.models.Game;
 
-public class LocalFlipStairCardController extends LocalOptionsController implements FlipStairCardController{
+public class LocalFlipStairCardController extends LocalController implements FlipStairCardController{
 
 	protected LocalFlipStairCardController(Game game) {
 		super(game);

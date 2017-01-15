@@ -1,7 +1,6 @@
 package klondike.views;
 
 import klondike.controllers.AskOptionController;
-import klondike.controllers.OptionsController;
 import klondike.models.Options;
 import klondike.utils.LimitedIntDialog;
 

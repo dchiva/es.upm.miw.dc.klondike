@@ -1,6 +1,11 @@
 package klondike.controllers;
 
-public interface AskOptionController extends OptionsController{
+import klondike.models.Options;
+
+public interface AskOptionController extends OperationController{
 
 	String boardToString();
+	
+	void setOption(Options option);
+	
 }

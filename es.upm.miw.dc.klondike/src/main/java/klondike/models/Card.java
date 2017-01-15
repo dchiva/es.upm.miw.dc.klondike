@@ -70,6 +70,6 @@ public class Card{
 	}
 	
 	public boolean areComplementarySuits(Card c){
-		return true;
+		return !this.areSameSuit(c);
 	}
 }

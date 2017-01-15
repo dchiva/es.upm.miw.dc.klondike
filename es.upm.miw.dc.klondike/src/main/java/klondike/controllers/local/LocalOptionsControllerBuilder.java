@@ -9,12 +9,13 @@ import klondike.models.Options;
 
 public class LocalOptionsControllerBuilder {
 	
-	Map<Options,LocalOptionsController> optionsControllers;
+	Map<Options,OperationController> optionsControllers;
 	Game game;
 	
 	public LocalOptionsControllerBuilder(Game game){
 		this.game=game;
-		this.optionsControllers=new HashMap<Options,LocalOptionsController>();
+		this.optionsControllers=new HashMap<Options,OperationController>();
+		this.optionsControllers.put(Options.START, new LocalStartController(this.game));
 		this.optionsControllers.put(Options.MOVE_DECK_TO_DISCARDS, new LocalDeckToDiscardsMoveController(this.game));
 		this.optionsControllers.put(Options.MOVE_DISCARD_TO_DECK, new LocalDiscardToDeckMoveController(this.game));
 		this.optionsControllers.put(Options.MOVE_DISCARD_TO_STAIR, new LocalDiscardToStairMoveController(this.game));
@@ -31,7 +32,6 @@ public class LocalOptionsControllerBuilder {
 		Options option=this.game.getOption();
 		
 		assert option==null || this.optionsControllers.containsKey(option);
-		
 		if(option==null){
 			return new LocalAskOptionController(this.game);
 		}else{

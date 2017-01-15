@@ -33,7 +33,7 @@ public class GameView {
 	public void interact(DiscardToSuitMoveController discardToSuitMoveController) {
 		if(!discardToSuitMoveController.move()){
 			IO io=new IO();
-			io.write("\nNo se pueden mover la carta de descartes a ninguna escalera\n");
+			io.write("\nNo se pueden mover la carta de descartes a ninguna escalera\n\n");
 		}
 	}
 
@@ -44,7 +44,7 @@ public class GameView {
 		int cardsNumber=io.readInt("¿Cuantas cartas? ");
 		if(!stairToStairMoveController.move(originStair-1, destinationStair-1, cardsNumber)){
 			io.write("\nNo se pueden mover "+cardsNumber+" cartas de la escalera "+originStair+" a la escalera "
-					+ destinationStair+"\n");
+					+ destinationStair+"\n\n");
 		}
 	}
 

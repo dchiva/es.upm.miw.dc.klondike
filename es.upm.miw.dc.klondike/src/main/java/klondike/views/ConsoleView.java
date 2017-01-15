@@ -8,7 +8,6 @@ import klondike.controllers.DiscardToSuitMoveController;
 import klondike.controllers.ExitController;
 import klondike.controllers.FlipStairCardController;
 import klondike.controllers.OperationController;
-import klondike.controllers.OptionsController;
 import klondike.controllers.StairToStairMoveController;
 import klondike.controllers.StairToSuitMoveController;
 import klondike.controllers.StartController;

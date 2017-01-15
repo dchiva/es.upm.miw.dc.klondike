@@ -4,7 +4,7 @@ import klondike.controllers.OperationControllerVisitor;
 import klondike.controllers.StairToStairMoveController;
 import klondike.models.Game;
 
-public class LocalStairToStairMoveController extends LocalOptionsController implements StairToStairMoveController{
+public class LocalStairToStairMoveController extends LocalController implements StairToStairMoveController{
 
 	protected LocalStairToStairMoveController(Game game) {
 		super(game);
